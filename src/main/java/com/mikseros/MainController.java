@@ -17,4 +17,9 @@ public class MainController {
 		return "admin/admin_login";
 	}
 	
+	@GetMapping("/user/login")
+	public String viewUserLoginPage() {
+		
+		return "user/user_login";
+	}
 }
