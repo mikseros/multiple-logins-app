@@ -7,14 +7,14 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 public class CustomUserDetailsService implements UserDetailsService {
 
-	@Autowired
+	@Autowired 
 	private UserRepository repo;
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = (User) repo.findByEmail(username);
+		User user = repo.findByEmail(username);
 		if (user == null) {
-			throw new UsernameNotFoundException("No user found or the given email");
+			throw new UsernameNotFoundException("No user found on the given email");
 		}
 		return new CustomUserDetails(user);
 	}
