@@ -22,4 +22,10 @@ public class MainController {
 		
 		return "user/user_login";
 	}
+	
+	@GetMapping("/admin/home")
+	public String viewAdminHomePage() {
+		
+		return "admin/admin_home";
+	}
 }
