@@ -10,6 +10,9 @@
 		<p>
 			Your username is: <b>[[${#request.userPrincipal.principal.username}]]</b>
 		</p>
+		<form th:action="@{/admin/logout}" method="post">
+			<input type="submit" value="Logout">
+		</form>
 	</div>
 </body>
 </html>
