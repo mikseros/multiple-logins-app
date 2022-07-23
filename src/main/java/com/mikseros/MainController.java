@@ -28,4 +28,9 @@ public class MainController {
 		
 		return "admin/admin_home";
 	}
+	
+	@GetMapping("/user/home")
+	public String viewUserHomePage() {
+		return "user/user_home";
+	}
 }
