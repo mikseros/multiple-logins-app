@@ -1,4 +1,4 @@
-package com.mikseros;
+package com.mikseros.admin;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

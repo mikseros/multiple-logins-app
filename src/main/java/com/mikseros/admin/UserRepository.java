@@ -1,4 +1,4 @@
-package com.mikseros;
+package com.mikseros.admin;
 
 import java.util.List;
 
