@@ -3,6 +3,7 @@ package com.mikseros.admin;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
@@ -19,8 +20,16 @@ public class AdminSecurityConfig {
 	}
 	
 	@Bean
-	public PasswordEncoder passwordEncoder() {
+	public PasswordEncoder passwordEncoder1() {
 		return NoOpPasswordEncoder.getInstance();
+	}
+	
+	@Bean
+	public DaoAuthenticationProvider authenticationProvider1() {
+		DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+		provider.setUserDetailsService(userDetailsService());
+		provider.setPasswordEncoder(passwordEncoder1());
+		return provider;
 	}
 	
 	@Bean
