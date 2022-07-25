@@ -38,7 +38,7 @@ public class AdminSecurityConfig {
 		http.authorizeRequests().antMatchers("/").permitAll();
 		
 		http.antMatcher("/admin/**")
-			.authorizeRequests().anyRequest().hasAuthority("ADMIN")
+			.authorizeRequests().anyRequest().authenticated()
 			.and().formLogin()
 				.loginPage("/admin/login")
 				.usernameParameter("email")
