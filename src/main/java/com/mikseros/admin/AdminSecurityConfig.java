@@ -34,6 +34,7 @@ public class AdminSecurityConfig {
 	
 	@Bean
 	public SecurityFilterChain filterChain1(HttpSecurity http) throws Exception {
+		http.authenticationProvider(authenticationProvider1());
 		http.authorizeRequests().antMatchers("/").permitAll();
 		
 		http.antMatcher("/admin/**")
