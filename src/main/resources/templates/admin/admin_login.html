@@ -9,7 +9,7 @@
 		<h2>Admin Login</h2>
 		
 		<div th:if="${param.error}">
-			<h4 STYLE="color: red">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]]]</h4>
+			<h4 STYLE="color: red">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</h4>
 		</div>
 		
 		<form th:action="@{/admin/login}" method="post">
